@@ -10,8 +10,6 @@ const products = [
   },
   {
     name: "Agua Oxigenada",
-    description:
-      "Solución antispética y desinfectante de uso tópico en diversas concentraciones.",
     icon: <Droplet className="w-8 h-8" />,
   },
   {
