@@ -6,8 +6,6 @@ import { Droplet, Wind, FlaskConical, Shield } from "lucide-react";
 const products = [
   {
     name: "Cal sodada",
-    description:
-      "Protector cutáneo de alta pureza para uso farmacéutico y cosmético.",
     icon: <Droplet className="w-8 h-8" />,
   },
   {
@@ -18,62 +16,42 @@ const products = [
   },
   {
     name: "Glutaral",
-    description:
-      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
     icon: <Shield className="w-8 h-8" />,
   },
   {
     name: "Clorhexidina Jabon liquido 4%",
-    description:
-      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
     name: "Cloroxilenol Solucion Jabonosa 5%",
-    description:
-      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
     icon: <Shield className="w-8 h-8" />,
   },
   {
     name: "Cloruro de Benzalkonio",
-    description:
-      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
     name: "Detergente Quirúrgico (Polvo)",
-    description:
-      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
     icon: <Shield className="w-8 h-8" />,
   },
   {
     name: "ICUGEL 150",
-    description:
-      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
     name: "IODOPOVIDONAS",
-    description:
-      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
     icon: <Shield className="w-8 h-8" />,
   },
   {
     name: "NITROFURAZONAS",
-    description:
-      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
     icon: <Shield className="w-8 h-8" />,
   },
   {
     name: "Tinturas de IODO",
-    description:
-      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
     name: "VASELINAS",
-    description:
-      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
     icon: <FlaskConical className="w-8 h-8" />,
   },
 ];
