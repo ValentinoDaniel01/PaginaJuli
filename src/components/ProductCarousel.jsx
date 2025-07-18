@@ -104,6 +104,18 @@ export default function ProductCarousel() {
           ›
         </button>
       </div>
+      {/* Botón fijo solo en móviles para bajar a "contacto" */}
+      <div className="fixed bottom-4 right-4 z-50 md:hidden">
+        <button
+          onClick={() => {
+            const contacto = document.getElementById("contacto");
+            contacto?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="bg-green-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-800 transition"
+        >
+          Contacto
+        </button>
+      </div>
     </section>
   );
 }
