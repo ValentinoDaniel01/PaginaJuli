@@ -50,7 +50,7 @@ export default function ProductDetail() {
             to="/"
             className="inline-block bg-green-700 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-md hover:bg-green-800 transition"
           >
-            ← Volver al inicio
+            Volver al inicio
           </Link>
         </div>
       </div>
