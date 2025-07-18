@@ -1,5 +1,5 @@
 // ProductCarousel.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Droplet, Wind, FlaskConical, Shield } from "lucide-react";
 
@@ -13,7 +13,7 @@ const products = [
   {
     name: "Agua Oxigenada",
     description:
-      "Solución antiséptica y desinfectante de uso tópico en diversas concentraciones.",
+      "Solución antispética y desinfectante de uso tópico en diversas concentraciones.",
     icon: <Droplet className="w-8 h-8" />,
   },
   {
@@ -80,7 +80,6 @@ const products = [
 
 export default function ProductCarousel() {
   const [index, setIndex] = useState(0);
-  const intervalRef = useRef(null);
   const itemsPerPage = 6;
   const groupedProducts = [];
 
@@ -96,13 +95,6 @@ export default function ProductCarousel() {
     setIndex((prev) => (prev - 1 + groupedProducts.length) % groupedProducts.length);
   };
 
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      nextSlide();
-    }, 4000);
-    return () => clearInterval(intervalRef.current);
-  }, []);
-
   return (
     <section id="productos" className="py-10 bg-gray-50">
       <motion.h2
@@ -116,7 +108,7 @@ export default function ProductCarousel() {
       </motion.h2>
       <div className="relative max-w-6xl mx-auto overflow-hidden bg-white border-2 border-green-700 rounded-xl p-4">
         <button
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white px-2 py-1 rounded hover:bg-green-800 z-10"
+          className="hidden md:block absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white px-4 py-2 text-xl rounded hover:bg-green-800 z-10"
           onClick={prevSlide}
         >
           ‹
@@ -154,7 +146,7 @@ export default function ProductCarousel() {
         </div>
 
         <button
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white px-2 py-1 rounded hover:bg-green-800 z-10"
+          className="hidden md:block absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white px-4 py-2 text-xl rounded hover:bg-green-800 z-10"
           onClick={nextSlide}
         >
           ›
