@@ -1,0 +1,159 @@
+// ProductCarousel.jsx
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { Droplet, Wind, FlaskConical, Shield } from "lucide-react";
+
+const products = [
+  {
+    name: "Cal sodada",
+    description:
+      "Protector cutáneo de alta pureza para uso farmacéutico y cosmético.",
+    icon: <Droplet className="w-8 h-8" />,
+  },
+  {
+    name: "Agua Oxigenada",
+    description:
+      "Solución antiséptica y desinfectante de uso tópico en diversas concentraciones.",
+    icon: <Droplet className="w-8 h-8" />,
+  },
+  {
+    name: "Glutaral",
+    description:
+      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
+    icon: <Shield className="w-8 h-8" />,
+  },
+  {
+    name: "Clorhexidina Jabon liquido 4%",
+    description:
+      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
+    icon: <FlaskConical className="w-8 h-8" />,
+  },
+  {
+    name: "Cloroxilenol Solucion Jabonosa 5%",
+    description:
+      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
+    icon: <Shield className="w-8 h-8" />,
+  },
+  {
+    name: "Cloruro de Benzalkonio",
+    description:
+      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
+    icon: <FlaskConical className="w-8 h-8" />,
+  },
+  {
+    name: "Detergente Quirúrgico (Polvo)",
+    description:
+      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
+    icon: <Shield className="w-8 h-8" />,
+  },
+  {
+    name: "ICUGEL 150",
+    description:
+      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
+    icon: <FlaskConical className="w-8 h-8" />,
+  },
+  {
+    name: "IODOPOVIDONAS",
+    description:
+      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
+    icon: <Shield className="w-8 h-8" />,
+  },
+  {
+    name: "NITROFURAZONAS",
+    description:
+      "Desinfectante de alto nivel para instrumental médico y equipos sensibles al calor.",
+    icon: <Shield className="w-8 h-8" />,
+  },
+  {
+    name: "Tinturas de IODO",
+    description:
+      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
+    icon: <FlaskConical className="w-8 h-8" />,
+  },
+  {
+    name: "VASELINAS",
+    description:
+      "Desarrollo de formulaciones a medida según las necesidades del cliente.",
+    icon: <FlaskConical className="w-8 h-8" />,
+  },
+];
+
+export default function ProductCarousel() {
+  const [index, setIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % (products.length - 2));
+  };
+
+  const prevSlide = () => {
+    setIndex(
+      (prev) => (prev - 1 + (products.length - 2)) % (products.length - 2)
+    );
+  };
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  return (
+    <section id="productos" className="py-10 bg-gray-50">
+      <motion.h2
+        className="text-4xl font-bold text-center text-green-700 mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Nuestros Productos
+      </motion.h2>
+      <div className="relative max-w-6xl mx-auto overflow-hidden bg-white border-2 border-green-700 rounded-xl p-4">
+        <button
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white px-2 py-1 rounded hover:bg-green-800 z-10"
+          onClick={prevSlide}
+        >
+          ‹
+        </button>
+
+        <div
+          className="flex transition-transform duration-500"
+          style={{ transform: `translateX(-${index * 33.33}%)` }}
+        >
+          {products.map((product, i) => (
+            <motion.div
+              key={i}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="w-1/3 p-6 flex-shrink-0 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+            >
+              <div className="text-green-600 mb-4 flex justify-center">
+                {product.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {product.name}
+              </h3>
+              <p className="text-gray-600 mb-4 text-sm">
+                {product.description}
+              </p>
+              <span className="text-green-700 font-medium">
+                Más información →
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        <button
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white px-2 py-1 rounded hover:bg-green-800 z-10"
+          onClick={nextSlide}
+        >
+          ›
+        </button>
+      </div>
+    </section>
+  );
+}
