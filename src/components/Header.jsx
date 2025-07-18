@@ -2,10 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logo from "../assets/logo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const handleContactClick = () => {
-    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isProductPage = location.pathname.startsWith("/producto/");
+
+  const scrollOrNavigate = (hash) => {
+    if (isProductPage) {
+      // Redirige al home con hash
+      navigate(`/${hash}`);
+    } else {
+      // Ya está en home: scroll suave
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -21,9 +33,9 @@ const Header = () => {
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-12 h-12 flex items-center justify-center">
+            <Link to="/" className="w-12 h-12 flex items-center justify-center">
               <img src={logo} alt="Logo" />
-            </div>
+            </Link>
             <div>
               <h1 className="text-2xl font-bold text-gradient">
                 Laboratorio IQB
@@ -35,33 +47,33 @@ const Header = () => {
           </motion.div>
 
           <nav className="hidden md:flex space-x-8 items-center">
-            <a
-              href="#inicio"
+            <button
+              onClick={() => scrollOrNavigate("#inicio")}
               className="text-gray-700 hover:text-green-600 transition-colors"
             >
-              ¿Quienes Somos?
-            </a>
-            <a
-              href="#productos"
+              ¿Quiénes Somos?
+            </button>
+            <button
+              onClick={() => scrollOrNavigate("#productos")}
               className="text-gray-700 hover:text-green-600 transition-colors"
             >
               Productos
-            </a>
-            <a
-              href="#instalaciones"
+            </button>
+            <button
+              onClick={() => scrollOrNavigate("#instalaciones")}
               className="text-gray-700 hover:text-green-600 transition-colors"
             >
               Instalaciones
-            </a>
-            <a
-              href="#certificaciones"
+            </button>
+            <button
+              onClick={() => scrollOrNavigate("#certificaciones")}
               className="text-gray-700 hover:text-green-600 transition-colors"
             >
               Certificaciones
-            </a>
+            </button>
             <Button
               variant="outline"
-              onClick={handleContactClick}
+              onClick={() => scrollOrNavigate("#contacto")}
               className="border-green-500 rounded-full text-green-600 hover:bg-green-200"
             >
               Contacto
