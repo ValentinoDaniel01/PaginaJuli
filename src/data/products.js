@@ -17,8 +17,10 @@ const products = [
     description: "Solución antiséptica y desinfectante de uso tópico.",
     composicion: "H2O2",
     usos: "El principal uso es como antiséptico, coagulante e higienizante en heridas superficiales, escoriaciones, hemorragias, etc. fundamentalmente en casos de emergencias y primeros auxilios. También es un desinfectante muy apropiado para diversos fines profesionales.",
-    formas:
-      "• Agua Oxigenada 100 Vol. IQB® (Solución de 100 Vol. – USO PROFESIONAL EXCLUSIVO) • Agua Oxigenada 10 Vol. IQB® (Solución Tópica de 10 Volúmenes)",
+    formas: [
+      "• Agua Oxigenada 100 Vol. IQB® (Solución de 100 Vol. – USO PROFESIONAL EXCLUSIVO)",
+      "• Agua Oxigenada 10 Vol. IQB® (Solución Tópica de 10 Volúmenes)",
+    ],
   },
   {
     slug: "glutaral",

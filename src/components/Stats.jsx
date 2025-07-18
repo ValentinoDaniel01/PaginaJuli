@@ -48,7 +48,7 @@ const Stats = () => {
   return (
     <section className="py-16 gradient-green">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center text-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 text-center text-white">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
