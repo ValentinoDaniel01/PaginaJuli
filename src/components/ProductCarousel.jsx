@@ -91,7 +91,7 @@ export default function ProductCarousel() {
         </div>
         {/* Botón siguiente (›) */}
         <button
-          className="absolute top-2 right-2 sm:top-3 sm:right-3 
+          className="absolute top-1/2 right-2 sm:top-3 sm:right-3 
              bg-green-100 text-green-700 border border-green-500 
              shadow-md hover:bg-green-300 active:scale-95 
              transition-all duration-200 
