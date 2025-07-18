@@ -1,9 +1,22 @@
 // ProductCarousel.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Droplet, FlaskConical, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import { products } from "../data/Products.jsx";
+import products from "../data/products";
+import { Droplet, FlaskConical, Shield } from "lucide-react";
+
+function renderIcon(iconName) {
+  switch (iconName) {
+    case "droplet":
+      return <Droplet className="w-8 h-8" />;
+    case "flask":
+      return <FlaskConical className="w-8 h-8" />;
+    case "shield":
+      return <Shield className="w-8 h-8" />;
+    default:
+      return null;
+  }
+}
 
 export default function ProductCarousel() {
   const [index, setIndex] = useState(0);
@@ -61,7 +74,7 @@ export default function ProductCarousel() {
                     className="bg-white p-6 text-center rounded-xl border hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
                   >
                     <div className="text-green-600 mb-4 flex justify-center">
-                      {product.icon}
+                      {renderIcon(product.icon)}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {product.name}

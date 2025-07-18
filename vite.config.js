@@ -201,7 +201,7 @@ export default defineConfig({
     addTransformIndexHtml,
   ],
   server: {
-    https: true,
+    https: false,
     cors: true,
     headers: {
       "Cross-Origin-Embedder-Policy": "credentialless",

@@ -1,10 +1,8 @@
-import { Droplet, FlaskConical, Shield } from "lucide-react";
-
 const products = [
   {
     slug: "cal-sodada",
     name: "Cal sodada",
-    icon: <Droplet className="w-8 h-8" />,
+    icon: "droplet",
     description:
       "Protector cutáneo de alta pureza para uso farmacéutico y cosmético.",
     composicion: "Ca(OH)₂ + NaOH",
@@ -13,7 +11,7 @@ const products = [
   {
     slug: "agua-oxigenada",
     name: "Agua Oxigenada",
-    icon: <Droplet className="w-8 h-8" />,
+    icon: "droplet",
     description: "Solución antiséptica y desinfectante de uso tópico.",
     composicion: "H₂O₂ al 10-30%",
     usos: "Desinfectante tópico, limpieza de heridas.",
@@ -21,7 +19,7 @@ const products = [
   {
     slug: "glutaral",
     name: "Glutaral",
-    icon: <Shield className="w-8 h-8" />,
+    icon: "shield",
     description: "Desinfectante de alto nivel para instrumental médico.",
     composicion: "C₅H₈O₂",
     usos: "Esterilización en frío de instrumental médico.",
@@ -29,7 +27,7 @@ const products = [
   {
     slug: "clorhexidina-jabon-liquido-4",
     name: "Clorhexidina Jabon liquido 4%",
-    icon: <FlaskConical className="w-8 h-8" />,
+    icon: "flask",
     description: "Solución jabonosa antiséptica de uso quirúrgico.",
     composicion: "Clorhexidina digluconato al 4%",
     usos: "Lavado quirúrgico y antiséptico de manos.",
@@ -37,7 +35,7 @@ const products = [
   {
     slug: "cloroxilenol-solucion-jabonosa-5",
     name: "Cloroxilenol Solución Jabonosa 5%",
-    icon: <Shield className="w-8 h-8" />,
+    icon: "shield",
     description: "Antiséptico para la piel con base jabonosa.",
     composicion: "Cloroxilenol al 5%",
     usos: "Higiene hospitalaria y quirúrgica.",
@@ -45,7 +43,7 @@ const products = [
   {
     slug: "cloruro-de-benzalkonio",
     name: "Cloruro de Benzalkonio",
-    icon: <FlaskConical className="w-8 h-8" />,
+    icon: "flask",
     description: "Antiséptico y desinfectante catiónico.",
     composicion: "C₆H₅CH₂N(CH₃)₂RCl",
     usos: "Desinfección de superficies y piel intacta.",
@@ -53,7 +51,7 @@ const products = [
   {
     slug: "detergente-quirurgico-polvo",
     name: "Detergente Quirúrgico (Polvo)",
-    icon: <Shield className="w-8 h-8" />,
+    icon: "shield",
     description: "Agente de limpieza para instrumental médico.",
     composicion: "Tensoactivos no iónicos + enzimas",
     usos: "Remoción de materia orgánica previa a desinfección.",
@@ -61,7 +59,7 @@ const products = [
   {
     slug: "icugel-150",
     name: "ICUGEL 150",
-    icon: <FlaskConical className="w-8 h-8" />,
+    icon: "flask",
     description: "Gel antiséptico para higiene de manos.",
     composicion: "Alcohol etílico 70%, humectantes",
     usos: "Antiséptico para manos sin enjuague.",
@@ -69,7 +67,7 @@ const products = [
   {
     slug: "iodopovidonas",
     name: "Iodopovidonas",
-    icon: <Shield className="w-8 h-8" />,
+    icon: "shield",
     description: "Solución desinfectante y antiséptica yodada.",
     composicion: "Povidona yodada al 10%",
     usos: "Preparación prequirúrgica de la piel.",
@@ -77,7 +75,7 @@ const products = [
   {
     slug: "nitrofurazonas",
     name: "Nitrofurazonas",
-    icon: <Shield className="w-8 h-8" />,
+    icon: "shield",
     description: "Pomada antibacteriana para uso tópico.",
     composicion: "Nitrofural 0.2%",
     usos: "Infecciones bacterianas de la piel.",
@@ -85,7 +83,7 @@ const products = [
   {
     slug: "tinturas-de-iodo",
     name: "Tinturas de Iodo",
-    icon: <FlaskConical className="w-8 h-8" />,
+    icon: "flask",
     description: "Desinfectante tradicional con alcohol y yodo.",
     composicion: "Yodo 2%, yoduro de potasio 2.5%, alcohol 50%",
     usos: "Desinfección tópica menor.",
@@ -93,7 +91,7 @@ const products = [
   {
     slug: "vaselinas",
     name: "Vaselinas",
-    icon: <FlaskConical className="w-8 h-8" />,
+    icon: "flask",
     description: "Base emoliente e hidratante de uso dermatológico.",
     composicion: "Vaselina pura o blanca",
     usos: "Protección y lubricación de la piel.",
