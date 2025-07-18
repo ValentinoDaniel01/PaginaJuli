@@ -12,7 +12,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="inicio" className="relative py-10 overflow-hidden">
+    <section id="inicio" className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 gradient-green-light opacity-90"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12">

@@ -1,20 +1,24 @@
 const products = [
   {
     slug: "cal-sodada",
-    name: "Cal sodada",
+    name: "Cal sodada NF",
     icon: "droplet",
     description:
       "Protector cutáneo de alta pureza para uso farmacéutico y cosmético.",
     composicion: "Ca(OH)₂ + NaOH",
-    usos: "Uso farmacéutico y cosmético.",
+    usos: "Se la usa principalmente para absorber y retirar el CO2, y otros gases ácidos, de sistemas respiratorios cerrados, ej: anestesia, máscaras protectoras de gases ácidos, submarinos, buzos autónomos, etc. También se usa para determinar carbono en química analítica elemental.",
+    formas: "•Cal Sodada NF IQB®.",
+    presentaciones: "• Envase PEAD con 1000 gs. • Envase PEAD con 18 Kgs.",
   },
   {
     slug: "agua-oxigenada",
     name: "Agua Oxigenada",
     icon: "droplet",
     description: "Solución antiséptica y desinfectante de uso tópico.",
-    composicion: "H₂O₂ al 10-30%",
-    usos: "Desinfectante tópico, limpieza de heridas.",
+    composicion: "H2O2",
+    usos: "El principal uso es como antiséptico, coagulante e higienizante en heridas superficiales, escoriaciones, hemorragias, etc. fundamentalmente en casos de emergencias y primeros auxilios. También es un desinfectante muy apropiado para diversos fines profesionales.",
+    formas:
+      "• Agua Oxigenada 100 Vol. IQB® (Solución de 100 Vol. – USO PROFESIONAL EXCLUSIVO) • Agua Oxigenada 10 Vol. IQB® (Solución Tópica de 10 Volúmenes)",
   },
   {
     slug: "glutaral",

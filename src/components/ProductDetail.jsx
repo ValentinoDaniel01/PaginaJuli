@@ -34,13 +34,25 @@ export default function ProductDetail() {
           </p>
           <p>
             <span className="font-semibold text-green-700">
-              Composición química:
+              Estructura química:
             </span>{" "}
             {producto.composicion}
           </p>
           <p>
+            <span className="font-semibold text-green-700">
+              Formas Farmaceuticas:
+            </span>{" "}
+            {producto.formas}
+          </p>
+          <p>
             <span className="font-semibold text-green-700">Usos:</span>{" "}
             {producto.usos}
+          </p>
+          <p>
+            <span className="font-semibold text-green-700">
+              Presentaciones:
+            </span>{" "}
+            {producto.presentaciones}
           </p>
         </div>
 
