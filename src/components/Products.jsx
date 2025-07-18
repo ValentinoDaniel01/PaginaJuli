@@ -81,15 +81,19 @@ const products = [
 export default function ProductCarousel() {
   const [index, setIndex] = useState(0);
   const intervalRef = useRef(null);
+  const itemsPerPage = 6;
+  const groupedProducts = [];
+
+  for (let i = 0; i < products.length; i += itemsPerPage) {
+    groupedProducts.push(products.slice(i, i + itemsPerPage));
+  }
 
   const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % (products.length - 2));
+    setIndex((prev) => (prev + 1) % groupedProducts.length);
   };
 
   const prevSlide = () => {
-    setIndex(
-      (prev) => (prev - 1 + (products.length - 2)) % (products.length - 2)
-    );
+    setIndex((prev) => (prev - 1 + groupedProducts.length) % groupedProducts.length);
   };
 
   useEffect(() => {
@@ -118,32 +122,34 @@ export default function ProductCarousel() {
           ‹
         </button>
 
-        <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${index * 33.33}%)` }}
-        >
-          {products.map((product, i) => (
-            <motion.div
-              key={i}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="w-1/3 p-6 flex-shrink-0 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+        <div className="transition-transform duration-500">
+          {groupedProducts.map((group, groupIndex) => (
+            <div
+              key={groupIndex}
+              className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ${groupIndex === index ? 'block' : 'hidden'}`}
             >
-              <div className="text-green-600 mb-4 flex justify-center">
-                {product.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {product.name}
-              </h3>
-              <p className="text-gray-600 mb-4 text-sm">
-                {product.description}
-              </p>
-              <span className="text-green-700 font-medium">
-                Más información →
-              </span>
-            </motion.div>
+              {group.map((product, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 text-center rounded-xl border hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
+                >
+                  <div className="text-green-600 mb-4 flex justify-center">
+                    {product.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    {product.description}
+                  </p>
+                  <span className="text-green-700 font-medium">Más información →</span>
+                </motion.div>
+              ))}
+            </div>
           ))}
         </div>
 
