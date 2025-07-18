@@ -50,7 +50,7 @@ export default function ProductCarousel() {
 
       <div className="relative max-w-6xl mx-auto overflow-hidden bg-white border-2 border-green-700 rounded-xl p-4">
         <button
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white px-3 py-1 text-lg rounded-full hover:bg-green-800 z-10"
+          className="absolute top-1/2 left-3 -translate-y-1/2 bg-green-100 text-green-700 border border-green-600 shadow-md hover:bg-green-300 transition-all duration-300 rounded-full w-10 h-10 flex items-center justify-center z-10"
           onClick={prevSlide}
         >
           ‹
@@ -98,7 +98,7 @@ export default function ProductCarousel() {
         </div>
 
         <button
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white px-3 py-1 text-lg rounded-full hover:bg-green-800 z-10"
+          className="absolute top-1/2 right-3 -translate-y-1/2 bg-green-100 text-green-700 border border-green-600 shadow-md hover:bg-green-300 transition-all duration-300 rounded-full w-10 h-10 flex items-center justify-center z-10"
           onClick={nextSlide}
         >
           ›
