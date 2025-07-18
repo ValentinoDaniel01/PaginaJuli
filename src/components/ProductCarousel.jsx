@@ -51,13 +51,10 @@ export default function ProductCarousel() {
       <div className="relative max-w-6xl mx-auto overflow-hidden bg-white border-2 border-green-700 rounded-xl p-4">
         {/* Botón anterior (‹) */}
         <button
-          className="absolute sm:top-3 sm:left-3 top-1/2 left-2 
-             -translate-y-1/2 sm:-translate-y-0 
-             bg-white text-green-700 border-2 border-green-500 
-             shadow-lg hover:bg-green-100 active:scale-95 
-             transition-all duration-200 
-             rounded-full w-9 h-9 sm:w-10 sm:h-10 
-             flex items-center justify-center z-10"
+          className="absolute sm:top-3 sm:left-3 top-1/2 left-2 -translate-y-1/2 sm:-translate-y-0 
+             bg-green-100 text-green-700 border border-green-600 shadow-md 
+             hover:bg-green-300 transition-all duration-300 
+             rounded-full w-10 h-10 flex items-center justify-center z-10"
           onClick={prevSlide}
         >
           ‹
@@ -105,23 +102,18 @@ export default function ProductCarousel() {
         </div>
         {/* Botón siguiente (›) */}
         <button
-          className="absolute sm:top-3 sm:left-3 top-1/2 left-2 
-             -translate-y-1/2 sm:-translate-y-0 
-             bg-white text-green-700 border-2 border-green-500 
-             shadow-lg hover:bg-green-100 active:scale-95 
-             transition-all duration-200 
-             rounded-full w-9 h-9 sm:w-10 sm:h-10 
-             flex items-center justify-center z-10"
-          onClick={nextSlide}
-        >
-          ‹
-        </button>
-        <button
-          className="absolute top-1/2 right-3 -translate-y-1/2 bg-green-100 text-green-700 border border-green-600 shadow-md hover:bg-green-300 transition-all duration-300 rounded-full w-10 h-10 flex items-center justify-center z-10"
+          className="absolute sm:top-3 sm:right-3 top-1/2 right-2 -translate-y-1/2 sm:-translate-y-0 
+             bg-green-100 text-green-700 border border-green-600 shadow-md 
+             hover:bg-green-300 transition-all duration-300 
+             rounded-full w-10 h-10 flex items-center justify-center z-10"
           onClick={nextSlide}
         >
           ›
         </button>
+        <button
+          className="absolute top-1/2 right-3 -translate-y-1/2 bg-green-100 text-green-700 border border-green-600 shadow-md hover:bg-green-300 transition-all duration-300 rounded-full w-10 h-10 flex items-center justify-center z-10"
+          onClick={nextSlide}
+        ></button>
       </div>
       {/* Botón fijo solo en móviles para bajar a "contacto" */}
       <div className="fixed bottom-4 right-4 z-50 md:hidden"></div>
