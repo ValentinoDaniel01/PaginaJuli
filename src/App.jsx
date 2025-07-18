@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import AboutUs from "@/components/AboutUs";
 import Stats from "@/components/Stats";
-import Products from "@/components/Products";
+import Products from "@/components/ProductCarousel.jsx";
 import Facilities from "@/components/Facilities";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
