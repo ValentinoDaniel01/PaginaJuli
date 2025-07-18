@@ -1,4 +1,3 @@
-import basicSsl from "@vitejs/plugin-basic-ssl";
 import path from "node:path";
 import react from "@vitejs/plugin-react";
 import { createLogger, defineConfig } from "vite";
@@ -199,7 +198,6 @@ export default defineConfig({
   plugins: [
     ...(isDev ? [inlineEditPlugin(), editModeDevPlugin()] : []),
     react(),
-    basicSsl(), // ← plugin para activar HTTPS
     addTransformIndexHtml,
   ],
   server: {
