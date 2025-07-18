@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Droplet, FlaskConical, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import { products } from "../data/productos";
+import { products } from "../data/Products.jsx";
 
 export default function ProductCarousel() {
   const [index, setIndex] = useState(0);
