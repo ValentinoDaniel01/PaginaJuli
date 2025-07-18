@@ -49,9 +49,8 @@ export default function ProductCarousel() {
       </motion.h2>
 
       <div className="relative max-w-6xl mx-auto overflow-hidden bg-white border-2 border-green-700 rounded-xl p-4">
-        {/* Botón izquierdo */}
         <button
-          className="hidden md:block absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white px-4 py-2 text-xl rounded-full hover:bg-green-800 z-10"
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white px-3 py-1 text-lg rounded-full hover:bg-green-800 z-10"
           onClick={prevSlide}
         >
           ‹
@@ -98,9 +97,8 @@ export default function ProductCarousel() {
           </AnimatePresence>
         </div>
 
-        {/* Botón derecho */}
         <button
-          className="hidden md:block absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white px-4 py-2 text-xl rounded-full hover:bg-green-800 z-10"
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white px-3 py-1 text-lg rounded-full hover:bg-green-800 z-10"
           onClick={nextSlide}
         >
           ›
