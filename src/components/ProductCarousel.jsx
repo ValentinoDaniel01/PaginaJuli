@@ -105,11 +105,11 @@ export default function ProductCarousel() {
         {/* Botón siguiente (›) */}
         <button
           className="absolute top-2 right-2 sm:top-3 sm:right-3 
-             bg-green-100 text-green-700 border border-green-500 
-             shadow-md hover:bg-green-300 active:scale-95 
+             bg-white text-green-700 border border-green-500 
+             shadow-md hover:bg-green-100 active:scale-95 
              transition-all duration-200 
-             rounded-full w-9 h-9 sm:w-10 sm:h-10 
-             flex items-center justify-center z-20"
+             rounded-full w-10 h-10 flex items-center justify-center 
+             z-[60]"
           onClick={nextSlide}
         >
           ›
