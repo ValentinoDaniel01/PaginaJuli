@@ -1,70 +1,9 @@
 // ProductCarousel.jsx
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Droplet, Wind, FlaskConical, Shield } from "lucide-react";
+import { Droplet, FlaskConical, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-const products = [
-  {
-    slug: "Cal sodada",
-    name: "Cal sodada",
-    icon: <Droplet className="w-8 h-8" />,
-  },
-  {
-    slug: "Agua Oxigenada",
-    name: "Agua Oxigenada",
-    icon: <Droplet className="w-8 h-8" />,
-  },
-  {
-    slug: "Glutaral",
-    name: "Glutaral",
-    icon: <Shield className="w-8 h-8" />,
-  },
-  {
-    slug: "Clorhexidina Jabon liquido 4%",
-    name: "Clorhexidina Jabon liquido 4%",
-    icon: <FlaskConical className="w-8 h-8" />,
-  },
-  {
-    slug: "Cloroxilenol Solucion Jabonosa 5%",
-    name: "Cloroxilenol Solucion Jabonosa 5%",
-    icon: <Shield className="w-8 h-8" />,
-  },
-  {
-    slug: "Cloruro de Benzalkonio",
-    name: "Cloruro de Benzalkonio",
-    icon: <FlaskConical className="w-8 h-8" />,
-  },
-  {
-    slug: "Detergente Quirúrgico (Polvo)",
-    name: "Detergente Quirúrgico (Polvo)",
-    icon: <Shield className="w-8 h-8" />,
-  },
-  {
-    slug: "ICUGEL 150",
-    name: "ICUGEL 150",
-    icon: <FlaskConical className="w-8 h-8" />,
-  },
-  {
-    slug: "IODOPOVIDONAS",
-    name: "IODOPOVIDONAS",
-    icon: <Shield className="w-8 h-8" />,
-  },
-  {
-    slug: "NITROFURAZONAS",
-    name: "NITROFURAZONAS",
-    icon: <Shield className="w-8 h-8" />,
-  },
-  {
-    slug: "Tinturas de IODO",
-    name: "Tinturas de IODO",
-    icon: <FlaskConical className="w-8 h-8" />,
-  },
-  {
-    slug: "VASELINAS",
-    name: "VASELINAS",
-    icon: <FlaskConical className="w-8 h-8" />,
-  },
-];
+import { products } from "../data/productos";
 
 export default function ProductCarousel() {
   const [index, setIndex] = useState(0);
@@ -128,7 +67,7 @@ export default function ProductCarousel() {
                       {product.name}
                     </h3>
                     <p className="text-gray-600 mb-4 text-sm">
-                      {product.description}
+                      {product.description || ""}
                     </p>
                     <span className="text-green-700 font-medium">
                       Más información →
