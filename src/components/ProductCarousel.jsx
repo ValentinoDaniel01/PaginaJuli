@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import products from "../data/products";
+import products from "../data/Products";
 import { Droplet, FlaskConical, Shield } from "lucide-react";
 
 function renderIcon(iconName) {

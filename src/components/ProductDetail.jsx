@@ -1,6 +1,6 @@
 // src/components/ProductDetail.jsx
 import { useParams, Link } from "react-router-dom";
-import products from "../data/products";
+import products from "../data/Products";
 
 export default function ProductDetail() {
   const { slug } = useParams();
