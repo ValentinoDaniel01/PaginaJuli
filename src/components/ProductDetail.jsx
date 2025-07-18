@@ -21,9 +21,7 @@ export default function ProductDetail() {
     <section className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8 border border-green-700">
         {/* Ícono y nombre del producto */}
-        <div className="flex items-center justify-center mb-6">
-          <div className="text-green-600">{producto.icon}</div>
-        </div>
+        <div className="flex items-center justify-center mb-6"></div>
         <h1 className="text-4xl font-bold text-center text-green-800 mb-6">
           {producto.name}
         </h1>
