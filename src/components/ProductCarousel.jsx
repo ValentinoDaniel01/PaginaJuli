@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import products from "../data/products";
 import { Droplet, FlaskConical, Shield } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 
 function renderIcon(iconName) {
   switch (iconName) {
@@ -57,20 +58,26 @@ export default function ProductCarousel() {
         </button>
 
         <div className="transition-transform duration-500">
-          {groupedProducts.map((group, groupIndex) => (
-            <div
-              key={groupIndex}
-              className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ${
-                groupIndex === index ? "block" : "hidden"
-              }`}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
             >
-              {group.map((product, i) => (
+              {groupedProducts[index].map((product, i) => (
                 <Link to={`/producto/${product.slug}`} key={i}>
                   <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    viewport={{ once: true }}
+                    initial={{ scale: 0.8, opacity: 0, y: 30 }}
+                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: i * 0.1,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
                     className="bg-white p-6 text-center rounded-xl border hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
                   >
                     <div className="text-green-600 mb-4 flex justify-center">
@@ -88,8 +95,8 @@ export default function ProductCarousel() {
                   </motion.div>
                 </Link>
               ))}
-            </div>
-          ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         <button
