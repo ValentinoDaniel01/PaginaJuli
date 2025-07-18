@@ -2,53 +2,65 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Droplet, Wind, FlaskConical, Shield } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const products = [
   {
+    slug: "Cal sodada",
     name: "Cal sodada",
     icon: <Droplet className="w-8 h-8" />,
   },
   {
+    slug: "Agua Oxigenada",
     name: "Agua Oxigenada",
     icon: <Droplet className="w-8 h-8" />,
   },
   {
+    slug: "Glutaral",
     name: "Glutaral",
     icon: <Shield className="w-8 h-8" />,
   },
   {
+    slug: "Clorhexidina Jabon liquido 4%",
     name: "Clorhexidina Jabon liquido 4%",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
+    slug: "Cloroxilenol Solucion Jabonosa 5%",
     name: "Cloroxilenol Solucion Jabonosa 5%",
     icon: <Shield className="w-8 h-8" />,
   },
   {
+    slug: "Cloruro de Benzalkonio",
     name: "Cloruro de Benzalkonio",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
+    slug: "Detergente Quirúrgico (Polvo)",
     name: "Detergente Quirúrgico (Polvo)",
     icon: <Shield className="w-8 h-8" />,
   },
   {
+    slug: "ICUGEL 150",
     name: "ICUGEL 150",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
+    slug: "IODOPOVIDONAS",
     name: "IODOPOVIDONAS",
     icon: <Shield className="w-8 h-8" />,
   },
   {
+    slug: "NITROFURAZONAS",
     name: "NITROFURAZONAS",
     icon: <Shield className="w-8 h-8" />,
   },
   {
+    slug: "Tinturas de IODO",
     name: "Tinturas de IODO",
     icon: <FlaskConical className="w-8 h-8" />,
   },
   {
+    slug: "VASELINAS",
     name: "VASELINAS",
     icon: <FlaskConical className="w-8 h-8" />,
   },
@@ -68,7 +80,9 @@ export default function ProductCarousel() {
   };
 
   const prevSlide = () => {
-    setIndex((prev) => (prev - 1 + groupedProducts.length) % groupedProducts.length);
+    setIndex(
+      (prev) => (prev - 1 + groupedProducts.length) % groupedProducts.length
+    );
   };
 
   return (
@@ -94,28 +108,33 @@ export default function ProductCarousel() {
           {groupedProducts.map((group, groupIndex) => (
             <div
               key={groupIndex}
-              className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ${groupIndex === index ? 'block' : 'hidden'}`}
+              className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ${
+                groupIndex === index ? "block" : "hidden"
+              }`}
             >
               {group.map((product, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white p-6 text-center rounded-xl border hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                >
-                  <div className="text-green-600 mb-4 flex justify-center">
-                    {product.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm">
-                    {product.description}
-                  </p>
-                  <span className="text-green-700 font-medium">Más información →</span>
-                </motion.div>
+                <Link to={`/producto/${product.slug}`} key={i}>
+                  <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-6 text-center rounded-xl border hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  >
+                    <div className="text-green-600 mb-4 flex justify-center">
+                      {product.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      {product.name}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm">
+                      {product.description}
+                    </p>
+                    <span className="text-green-700 font-medium">
+                      Más información →
+                    </span>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           ))}
