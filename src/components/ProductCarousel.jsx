@@ -108,7 +108,7 @@ export default function ProductCarousel() {
              bg-green-100 text-green-700 border border-green-500 
              shadow-md hover:bg-green-300 active:scale-95 
              transition-all duration-200 
-             rounded-full w-10 h-10 flex items-center justify-center 
+             rounded-25 w-10 h-10 flex items-center justify-center 
              z-[60]"
           onClick={nextSlide}
         >
