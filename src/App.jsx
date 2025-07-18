@@ -30,6 +30,7 @@ function App() {
   return (
     <>
       <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Laboratorio IQB - Soluciones en Productos Sanitarios</title>
         <meta
           name="description"
@@ -46,7 +47,7 @@ function App() {
           path="/"
           element={
             <>
-              <div className="min-h-screen bg-white">
+              <div className="min-h-screen bg-white overflow-x-hidden w-full max-w-full">
                 <Header />
                 <main>
                   <AboutUs />
