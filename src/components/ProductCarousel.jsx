@@ -89,7 +89,7 @@ export default function ProductCarousel() {
                       {product.description || ""}
                     </p>
                     <span className="text-green-700 font-medium">
-                      Más información →
+                      Más información
                     </span>
                   </motion.div>
                 </Link>
