@@ -1,7 +1,7 @@
 const products = [
   {
     slug: "cal-sodada",
-    name: "Cal sodada NF",
+    name: "Cal sodada NF - IQB®",
     icon: "droplet",
     description:
       "Protector cutáneo de alta pureza para uso farmacéutico y cosmético.",
